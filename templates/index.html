@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMAGE CARTOONIFIER</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Basic styles for the image container */
+        #image-container {
+            margin: 20px;
+            text-align: center;
+        }
+        #original-image, #cartoon-image {
+            max-width: 100%;
+            height: auto;
+            display: none; /* Initially hide the images */
+            margin-top: 10px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="sidebar">
+            <div class="logo-content">
+                <div class="logo">
+                    <i class='bx bxl-yelp'></i>
+                    <h3>CartoonZ</h3>
+                </div>
+                <i class='bx bx-menu' id="btn"></i>
+            </div>
+            <ul class="list">
+                <li class="search">
+                    <i class='bx bx-search'></i>
+                    <input type="text" placeholder="Search...">
+                </li>
+                <li class="list-item active">
+                    <a href="#">
+                        <i class='bx bxs-dashboard'></i>
+                        <span class="links-name">Dashboard</span>
+                    </a>
+                    <span class="tooltip">Dashboard</span>
+                </li>
+                <li class="list-item">
+                    <a href="#">
+                        <i class='bx bx-user'></i>
+                        <span class="links-name">User </span>
+                    </a>
+                    <span class="tooltip">User </span>
+                </li>
+                <li class="list-item">
+                    <a href="#">
+                        <i class='bx bx-grid-alt'></i>
+                        <span class="links-name">More</span>
+                    </a>
+                    <span class="tooltip">More</span>
+                </li>
+            </ul>
+
+            <ul class="list-logout">
+                <li>
+                    <a href="#">
+                        <i class='bx bx-log-out'></i>
+                        <span class="links-name">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+    <div id="image-container">
+        <input type="file" id="image-input" accept="image/*">
+        <button id="cartoonify-button">Cartoonify!</button>
+        <!--<h3>Original Image:</h3>
+        <img id="original-image" src="" alt="Original Image">-->
+        <h3>Cartoonized Image:</h3>
+        <img id="cartoon-image" src="" alt="Cartoon Image">
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
